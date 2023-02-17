@@ -1,0 +1,606 @@
+*{
+    margin: 0%;
+    padding: 0%; 
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: #e2e8f0;
+}
+.workspace{
+    position: relative;
+}
+
+.dropDownBox{
+    position:absolute;
+    left: 30px;
+    top: 20px;
+    display: none;
+}
+.dropDownBox i{
+    font-size: 5rem;
+    color: #ff7200;
+}
+
+/*Left Side Bar Styling */
+.LeftsideBar{
+    width: 16%;
+    height: 100vh;
+    background-color: #f1f5f9;
+    position: fixed;
+}
+.RightsideBar{
+    width: 16%;
+    height: 100vh;
+    background-color: #f1f5f9;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+
+}
+.title{
+    width: 100%;
+    position: absolute;
+    margin: 30px auto ;
+}
+.title h2{
+    text-align: center;
+    color: #475569;
+}
+.sideBtn{
+    width: 100%;
+    margin: 100px auto;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+.addTaskBtn{    
+    background-color: #ff7200;
+    color: whitesmoke;
+    font-weight: bold;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    padding: 15px 35px;
+}
+.sideNavBar{
+    position: absolute;
+    width: 100%;
+    margin: 200px auto;
+}
+.navBarLi{
+    padding: 16px 20px ;
+    font-size: 1.3rem;
+    color: #475569;
+}
+.navList #activeNavBar{
+    background-color: #ede9fe;
+    color: red;
+}
+.navList #darkActiveNavBar{
+    background-color: yellow;
+    color: red;
+}
+.navList{
+    position: relative;
+}
+.marker{
+    display: none;
+}
+.navList #activeMarker{
+    display: block;
+    position:absolute;
+    background-color: #ff7200;
+    padding: 28px 3px;
+    top: 0%;
+    right: 0%;
+}
+
+/* Right Side Bar Styling */
+.userName{
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+.userName h3{
+    color: #475569;
+}
+.darkModeContainer{
+    margin-top: 30px;
+    color: #475569;
+}
+.darkModeContainer p{
+    display: inline;
+    margin-left: 10%;
+    font-size: 1.15rem;
+}
+.darkModeToggle{
+    width: 50px;
+    height: 20px;
+    background-color: #e2e8f0;
+    display: inline;
+    position:absolute;
+    right: 10%;
+    border-radius: 50px;
+}
+.deactiveDarkModeCircle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #ff7200;
+    position: absolute;
+    left: 0%;
+}
+.activeDarkModeCircle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #ff7200;
+    position: absolute;
+    right: 0%;
+}
+.allTaskContainer{
+    text-align: center; 
+    align-items: center;
+    justify-items: center; 
+    margin-top: 30px;
+}
+.allTaskContainer p{
+    display: inline;
+    position:absolute;
+    color: #475569;
+    font-size: 1.2rem;
+}
+.allTaskContainer p.allTaskText{
+    left: 10%;
+}
+.allTaskContainer p.allTaskValue{
+    right: 10%;
+}
+.progressAllTask{
+    width: 80%;
+    height: 10px;
+    border-radius: 50px;
+    background-color: #e2e8f0;
+    position:absolute;
+    margin: 30px auto;
+    left: 22px;
+}
+.progressFillerAllTask{
+    position:absolute;
+    /* width: 33%; */
+    height: 10px;
+    border-radius: 50px;
+    background-color: #ff7200;
+}
+
+.todayTaskContainer{
+    text-align: center; 
+    align-items: center;
+    justify-items: center; 
+    margin-top: 110px;
+}
+.todayTaskContainer p{
+    display: inline;
+    position:absolute;
+    color: #475569;
+    font-size: 1.2rem;
+}
+.todayTaskContainer p.todayTaskText{
+    left: 10%;
+}
+.todayTaskContainer p.todayTaskValue{
+    right: 10%;
+}
+.progressTodayTask{
+    width: 80%;
+    height: 10px;
+    border-radius: 50px;
+    background-color: #e2e8f0;
+    position:absolute;
+    margin: 30px auto;
+    left: 22px;
+}
+.progressFillerTodayTask{
+    position:absolute;
+    width: 0%;
+    height: 10px;
+    border-radius: 50px;
+    background-color: #ff7200;
+}
+.authorName{
+    width: 170px;
+    height: 70px;
+    border-radius: 15px;
+    background-color: #ffd6b4;
+    position:absolute;
+    bottom: 3%;
+    left: 20px;
+}
+.authorName p{
+    color: #475569;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Middle WorkSpace Styling */
+.middleWorkspace{
+    width: 64%;
+    height: 100vh;
+    position: absolute;
+    top: 0%;
+    left: 18%;
+    
+}
+.searchContainer{
+    margin-top: 30px;
+}
+.searchBox{
+    border-radius: 10px;
+    border: none;
+    height: 60px;
+    padding: 2px 23px 2px 30px;
+    background-color: #f1f5f9;
+}
+.searchBox::placeholder{
+    color: #94a3b8;
+}
+.searchBox:hover, .searchBox:focus{
+    outline: 2px solid #ff7200 ;
+}
+.workspaceBtn{
+    position: absolute;
+    right: 0%;
+    top: 15%;
+}
+.addTaskBtnWorkspace{    
+    background-color: #ff7200;
+    color: whitesmoke;
+    /* font-weight: bold; */
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    padding: 15px 20px;
+}
+.middleWorkspace h2{
+    position:absolute;
+    color: #475569;
+    margin-top: 50px;
+}
+.TaskContainer{
+    margin-top: 15%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.taskBox{
+    background-color: #ff7200;
+    max-width: 30%;
+    height: 250px;
+    border-radius: 10px;
+    position: relative;
+    margin: 20px 0px; 
+    flex-basis: 50%;
+}
+.task{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    position: relative;
+}
+.task h2{
+    margin-top: 0%;
+    color: whitesmoke;
+}
+.task p{
+    margin-top: 40px;
+    display: inline-block;
+    color: rgb(236, 236, 236);
+}
+.addNewTaskBox{
+    background-color: transparent;
+    border: 5px dotted grey;
+    max-width: 30%;
+    min-height: 250px;
+    border-radius: 10px;
+    position: relative;
+    margin: 20px 0px; 
+    flex-basis: 50%;
+}
+.addNewTask{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    position: relative;
+}
+.addNewTask h2{
+    left: 20%;
+}
+.calenderIcon{
+    margin-top: 88px;
+    width: 12%;
+    position:absolute;
+}
+.calenderIcon i{
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
+.task .taskDate{
+   position:absolute;
+   display: inline;
+   top: 51%;
+   left: 20%;
+}
+.completeBox{
+    position: absolute;
+    width: 50%;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #49ff8c;
+    bottom: 5%;
+}
+.uncompleteBox{
+    position: absolute;
+    width: 50%;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #fde68a;
+    bottom: 5%;
+}
+.completeBox p{
+    color: rgb(44, 44, 44);
+    margin-top: 4%;
+    margin-left: 12%;
+    font-weight: 500;
+}
+.uncompleteBox p{
+    color: brown;
+    margin-top: 4%;
+    margin-left: 12%;
+    font-weight: 500;
+}
+.starIcon{
+    margin-top: 150px;
+    width: 12%;
+    position: absolute;
+    bottom: 6%;
+    left: 60%;
+}
+.starIcon #unFavourite{
+    font-size: 1.5rem;
+    color: white
+}
+.starIcon #favourite{
+    font-size: 1.5rem;
+    color: rgb(255, 247, 0)
+}
+/* .starIcon i{
+    font-size: 1.5rem;
+    color: white
+} */
+.deleteIcon{
+    margin-top: 150px;
+    width: 12%;
+    position: absolute;
+    bottom: 6%;
+    left: 72%;
+}
+.deleteIcon i{
+    font-size: 1.5rem;
+    color: white
+}
+.editIcon{
+    width: 12%;
+    position: absolute;
+    bottom: 6%;
+    left: 86%;
+}
+.editIcon i{
+    font-size: 1.5rem;
+    color: white;
+}
+.folderBox{
+    width: 30%;
+    height: 12%;
+    background-color: #92f5c7;
+    position: absolute;
+    top: -12%;
+    right: 6%;
+    border-radius: 10px 10px 0px 0px;
+}
+.folderBox p{
+    position:absolute;
+    left: 25%;
+    top: 20%;
+}
+
+
+/* Form Add Task */
+.addTaskFormContainer{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;  
+    /* display: none; */
+}
+.addTaskFormBox{
+    width: 35%;
+    height: 100vh;
+    margin: auto;
+    background-color: #e2e8f0;
+    border-radius: 20px;
+    padding: 20px;
+}
+.addTaskForm{
+    position: relative;
+}
+.addTaskForm .crossForm{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+.crossForm i{
+    font-size: 2rem;
+    color: #ff7200;
+}
+.addTaskForm h1{
+    color: #475569;
+}
+.addTaskForm label{
+    color: #475569;
+    display: block;
+    padding: 10px 0px;
+    margin-top: 15px;
+}
+.addTaskForm input{
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+    height: 50px;
+    padding: 2px 23px 2px 30px;
+    background-color: #f1f5f9;
+}
+.addTaskForm::placeholder{
+    color: #475569;
+    opacity: 0.1;
+}
+.addTaskForm input:hover, .addTaskForm input:focus{
+    outline: 2px solid #ff7200 ;
+}
+.addTaskForm textarea{
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+    background-color: #f1f5f9;
+    resize: none;
+}
+.addTaskForm textarea::placeholder{
+    color: #475569;
+    opacity: 0.8;
+    padding: 10px;
+}
+.addTaskForm textarea:hover, .addTaskForm textarea:focus{
+    outline: 2px solid #ff7200 ;
+}
+.checkBoxContainer{
+    position: relative;
+}
+.addTaskForm .isImportantCheckbox{
+    width: 5%;
+    position: relative;
+    display: flex;
+}
+.addTaskForm .isImportantCheckbox:hover, .addTaskForm .isImportantCheckbox:focus{
+    outline: none;
+}
+.addTaskForm label.checkBoxLabel{
+    position: absolute;
+    bottom: 10%;
+    left: 30px;
+}
+.addTaskForm .isCompletedCheckbox{
+    width: 5%;
+    position: relative;
+    display: flex;
+}
+.addTaskForm .isCompletedCheckbox:hover, .addTaskForm .isCompletedCheckbox:focus{
+    outline: none;
+}
+.addTaskForm button.taskSubmit{
+    background-color: #ff7200;
+    color: whitesmoke;
+    font-weight: bold;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    padding: 15px 35px;
+    width: 100%;
+}
+.addTaskForm button.crossBtn{
+    border: none;
+}
+
+
+
+
+
+
+
+/* Media Query */
+@media screen and (max-width: 1200px) {
+    .TaskContainer{
+        flex-direction: row;
+    }
+    .taskBox{
+        min-width: 40%;
+        /* margin: 20px 0px; */
+    }
+    .addTaskFormBox{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .LeftsideBar{
+        display: none;
+    }
+    .RightsideBar{
+        display: none;
+    }
+    .middleWorkspace{
+        left: 0%;
+        width: 100%;
+
+    }
+
+
+
+
+    .TaskContainer{
+        flex-direction: column;
+        margin-top: 25%;
+    }
+    .taskBox{
+        min-width: 60%;
+        margin-left: 18%;
+        margin-top: 10%;
+    }
+    .task{
+        min-width: 100%;
+        height: 400px;
+    }
+    .calenderIcon{
+        margin-top: 220px;
+        width: 12%;
+    }
+    .task .taskDate{
+        position:absolute;
+        display: inline;
+        top: 64%;
+        left: 20%;
+     }
+     .searchContainer{
+        margin-top: 30px;
+        margin-left: 25%;
+        /* position: absolute; */
+        right: 0%;
+    }
+    .searchBox{
+        width: 100%;
+    }
+    .dropDownBox{
+        display: block;
+    }
+    .addTaskFormBox{
+        width: 80%;
+    }
+
+    
+}
+
+
+
